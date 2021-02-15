@@ -1,0 +1,68 @@
+#include<stdio.h>
+
+// Function Prototype
+int add(int, int);
+int sub(int, int);
+int mul(int, int);
+int div(int, int);
+void getData(int *, int *);
+
+// Main Function
+int main()
+{
+    int num1, num2, choice;
+    while(1)
+    {
+      printf("\n[0] Exit\n[1] Add\n[2] Subtract\n[3] Multiply\n[4] Divide\nEnter Your Choice:");
+      scanf("%d", &choice);
+      switch(choice)
+      {
+         case 0:
+           return 0;
+         case 1:
+           getData(&num1, &num2); // get Input Values
+           printf("%d", add(num1,num2));
+           break;
+         case 2:
+           getData(&num1, &num2); // get Input Values       
+           printf("%d ", sub(num1,num2));
+           break;
+         case 3:
+           getData(&num1, &num2); // get Input Values       
+           printf("%d", mul(num1,num2));
+           break;
+         case 4:
+           getData(&num1, &num2); // get Input Values
+           printf("%d", div(num1,num2));
+           break;
+         default:
+           printf("That is not a valid choice.");
+           break;
+      }
+    }
+}
+
+// Get Memory Address of num1, num2 and store input values in those locations.
+void getData(int *num1_ptr, int *num2_ptr)
+{
+printf("Enter 1st number:\n");
+    scanf("%d", num1_ptr);
+printf("Enter 2nd number:\n");
+    scanf("%d", num2_ptr);
+}
+
+//Addition
+int add(int x,int y)
+{   return x+y;   }   
+
+//Subtraction
+int sub(int x,int y)
+{   return  x-y;  }   
+
+//Multiplication
+int mul(int x,int y)
+{   return x*y;   }
+
+//Division
+int div(int x,int y)
+{   return x/y;   }
